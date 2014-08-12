@@ -1,0 +1,571 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>CSS简写方法 提高加载优化你的网站 | 有新意吧</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="iToMY">
+    
+    <meta name="description" content="高效的css写法中的一条就是使用简写。通过简写可以让你的CSS文件更小，更易读。而了解CSS属性简写也是前端开发工程师的基本功之一。今天我们系统地总结一下CSS属性的缩写。 
+色彩缩写
+色彩的缩写最简单，在色彩值用16进制的时候，如果每种颜色的值相同，就可以写成一个：
+1color：#113366
+">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="有新意吧">有新意吧</a></h1>
+				<h2 class="blog-motto">--静下心来写点文字，分享新意，收获欢乐！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="https://github.com/zhuangxb">GITHUB</a></li>
+					
+					<li>
+					
+					</li>
+					
+									
+				<li> <a title="点击此处，页面元素抖动！" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>HIGH  </a> </li>
+					
+					
+					
+                <li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>
+
+				
+			
+				</ul>
+			</nav>	
+</div>
+
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/05/09/3/" title="CSS简写方法 提高加载优化你的网站" itemprop="url">CSS简写方法 提高加载优化你的网站</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://www.uxy8.com" title="iToMY">iToMY</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-05-09T11:52:48.000Z" itemprop="datePublished">5月 9 2014</time>
+    更新日期:<time datetime="2014-08-12T12:18:25.000Z" itemprop="dateModified">8月 12 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#色彩缩写"><span class="toc-number">1.</span> <span class="toc-text">色彩缩写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#盒子大小"><span class="toc-number">2.</span> <span class="toc-text">盒子大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#边框(border)"><span class="toc-number">3.</span> <span class="toc-text">边框(border)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outline"><span class="toc-number">4.</span> <span class="toc-text">outline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#背景(background)"><span class="toc-number">5.</span> <span class="toc-text">背景(background)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font"><span class="toc-number">6.</span> <span class="toc-text">font</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表样式"><span class="toc-number">7.</span> <span class="toc-text">列表样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#border-radius(圆角半径)"><span class="toc-number">8.</span> <span class="toc-text">border-radius(圆角半径)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#_"><span class="toc-number">8.1.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资源_ 本文来源自网站"><span class="toc-number">8.2.</span> <span class="toc-text">参考资源  本文来源自网站</span></a></li></ol></li></ol>
+		</div>
+		
+		<p>高效的css写法中的一条就是使用简写。通过简写可以让你的CSS文件更小，更易读。而了解CSS属性简写也是前端开发工程师的基本功之一。今天我们系统地总结一下CSS属性的缩写。<br> <span id="more-11956"></span></p>
+<h3 id="色彩缩写">色彩缩写</h3>
+<p>色彩的缩写最简单，在色彩值用16进制的时候，如果每种颜色的值相同，就可以写成一个：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">color</span>：<span style="color: #cc00cc;">#113366</span></pre></td></tr></tbody></table></div>
+
+<p>可以简写为</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">color</span>：<span style="color: #cc00cc;">#136</span></pre></td></tr></tbody></table></div>
+
+<p>所有用到16进制色彩值的地方都可以使用简写，比如background-color、border-color、text-shadow、box-shadow等。</p>
+<h3 id="盒子大小">盒子大小</h3>
+<p>这里主要用于两个属性：margin和padding，我们以margin为例，padding与之相同。盒子有上下左右四个方向，每个方向都有个外边距：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br>4<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">margin-top</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">margin-right</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span><span style="color: #00aa00;">;</span><br>margin-botton<span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">margin-left</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>这四个值可以缩写到一起：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">margin</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span> <span style="color: #993333;">1px</span> <span style="color: #993333;">1px</span> <span style="color: #993333;">1px</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>缩写的顺序是上-&gt;右-&gt;下-&gt;左。顺时针的方向。相对的边的值相同，则可以省掉：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br>4<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">margin</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span><span style="color: #00aa00;">;</span>//四个方向的边距相同，等同于<span style="font-weight: bold;">margin</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span> <span style="color: #993333;">1px</span> <span style="color: #993333;">1px</span> <span style="color: #993333;">1px</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">margin</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span> <span style="color: #993333;">2px</span><span style="color: #00aa00;">;</span>//上下边距都为<span style="color: #993333;">1px</span>，左右边距均为<span style="color: #993333;">2px</span>，等同于<span style="font-weight: bold;">margin</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span> <span style="color: #993333;">2px</span> <span style="color: #993333;">1px</span> <span style="color: #993333;">2px</span><br><span style="font-weight: bold;">margin</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span> <span style="color: #993333;">2px</span> <span style="color: #993333;">3px</span><span style="color: #00aa00;">;</span>//右边距和左边距相同，等同于<span style="font-weight: bold;">margin</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span> <span style="color: #993333;">2px</span> <span style="color: #993333;">3px</span> <span style="color: #993333;">2px</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">margin</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span> <span style="color: #993333;">2px</span> <span style="color: #993333;">1px</span> <span style="color: #993333;">3px</span><span style="color: #00aa00;">;</span>//注意，这里虽然上下边距都为<span style="color: #993333;">1px</span>，但是这里不能缩写。</pre></td></tr></tbody></table></div>
+
+<h3 id="边框(border)">边框(border)</h3>
+<p>border是个比较灵活的属性，它有border-width、border-style、border-color三个子属性。</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">border-width</span><span style="color: #00aa00;">:</span>数字<span style="color: #00aa00;">+</span>单位<span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-style</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">none</span> || <span style="color: #993333;">hidden</span> || <span style="color: #993333;">dashed</span> || <span style="color: #993333;">dotted</span> || <span style="color: #993333;">double</span> || <span style="color: #993333;">groove</span> || <span style="color: #993333;">inset</span> || <span style="color: #993333;">outset</span> || <span style="color: #993333;">ridge</span> || <span style="color: #993333;">solid</span> <span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-color</span><span style="color: #00aa00;">:</span> 颜色 <span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>它可以按照width、style和color的顺序简写：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">border</span><span style="color: #00aa00;">:</span><span style="color: #993333;">5px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#369</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>有的时候，border可以写的更简单些，有些值可以省掉，但是请注意哪些是必须的，你也可以测试一下：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br>4<br>5<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">border</span><span style="color: #00aa00;">:</span><span style="color: #993333;">groove</span> <span style="color: #993333;">red</span><span style="color: #00aa00;">;</span>  //大家猜猜这个边框的宽度是多少？<br><span style="font-weight: bold;">border</span><span style="color: #00aa00;">:</span><span style="color: #993333;">solid</span><span style="color: #00aa00;">;</span>  //这会是什么样子？<br><span style="font-weight: bold;">border</span><span style="color: #00aa00;">:</span><span style="color: #993333;">5px</span><span style="color: #00aa00;">;</span>  //这样可以吗？<br><span style="font-weight: bold;">border</span><span style="color: #00aa00;">:</span><span style="color: #993333;">5px</span> <span style="color: #993333;">red</span><span style="color: #00aa00;">;</span> //这样可以吗？？<br><span style="font-weight: bold;">border</span><span style="color: #00aa00;">:</span><span style="color: #993333;">red</span><span style="color: #00aa00;">;</span> //这样可以吗？？？</pre></td></tr></tbody></table></div>
+
+<p>通过上面的代码可以了解到，border默认的宽度是3px，默认的色彩<del datetime="2010-04-29T02:58:52+00:00">是black——黑色</del>。默认的颜色是该规则中的color属性的值，而color默认是黑色的。border的缩写中<strong>border-style是必须的</strong>。</p>
+<p>同时，还可以对每条边采用缩写：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br>4<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">border-top</span><span style="color: #00aa00;">:</span><span style="color: #993333;">4px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#333</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-right</span><span style="color: #00aa00;">:</span><span style="color: #993333;">3px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#666</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-bottom</span><span style="color: #00aa00;">:</span><span style="color: #993333;">3px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#666</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-left</span><span style="color: #00aa00;">:</span><span style="color: #993333;">4px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#333</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>还可以对每个属性采用缩写：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">border-width</span>：<span style="color: #993333;">1px</span> <span style="color: #993333;">2px</span> <span style="color: #993333;">3px</span><span style="color: #00aa00;">;</span> //最多可用四个值，缩写规则类似盒子大小的缩写，下同<br><span style="font-weight: bold;">border-style</span>：<span style="color: #993333;">solid</span> <span style="color: #993333;">dashed</span> <span style="color: #993333;">dotted</span> <span style="color: #993333;">groove</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-color</span><span style="color: #00aa00;">:</span><span style="color: #993333;">red</span> <span style="font-weight: bold;">blue</span> <span style="color: #993333;">white</span> <span style="font-weight: bold;">black</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<h3 id="outline">outline</h3>
+<p>outline类似border，不同的是border会影响盒模型，而outline不会。</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">outline-width</span><span style="color: #00aa00;">:</span>数字<span style="color: #00aa00;">+</span>单位<span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">outline-style</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">none</span> || <span style="color: #993333;">dashed</span> || <span style="color: #993333;">dotted</span> || <span style="color: #993333;">double</span> || <span style="color: #993333;">groove</span> || <span style="color: #993333;">inset</span> || <span style="color: #993333;">outset</span> || <span style="color: #993333;">ridge</span> || <span style="color: #993333;">solid</span> <span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">outline-color</span><span style="color: #00aa00;">:</span> 颜色 <span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>可以缩写为：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">outline</span><span style="color: #00aa00;">:</span><span style="color: #993333;">1px</span> <span style="color: #993333;">solid</span> <span style="color: #993333;">red</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>同样，outline的简写中，outline-style也是必须的，另外两个值则可选，默认值和border相同。</p>
+<h3 id="背景(background)">背景(background)</h3>
+<p>background是最常用的简写之一，它包含以下属性：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br>4<br>5<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">background-color</span><span style="color: #00aa00;">:</span> <span style="font-weight: bold;">color</span> || <span style="color: #cc00cc;">#hex</span> || RGB<span style="color: #00aa00;">(</span>% || <span style="color: #cc66cc;">0</span>-<span style="color: #cc66cc;">255</span><span style="color: #00aa00;">)</span> || RGBa<span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">background-image</span><span style="color: #00aa00;">:</span><span style="color: #993333;">url</span><span style="color: #00aa00;">(</span><span style="color: #00aa00;">)</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">background-repeat</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">repeat</span> || <span style="color: #993333;">repeat-x</span> || <span style="color: #993333;">repeat-y</span> || <span style="color: #993333;">no-repeat</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">background-position</span><span style="color: #00aa00;">:</span> X Y || <span style="color: #00aa00;">(</span><span style="font-weight: bold;">top</span>||<span style="font-weight: bold;">bottom</span>||<span style="color: #993333;">center</span><span style="color: #00aa00;">)</span> <span style="color: #00aa00;">(</span><span style="font-weight: bold;">left</span>||<span style="font-weight: bold;">right</span>||<span style="color: #993333;">center</span><span style="color: #00aa00;">)</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">background-attachment</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">scroll</span> || <span style="color: #993333;">fixed</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>background的简写可以大大的提高css的效率：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">background</span><span style="color: #00aa00;">:</span><span style="color: #cc00cc;">#fff</span> <span style="color: #993333;">url</span><span style="color: #00aa00;">(</span><span style="font-style: italic; color: #ff0000;">img.png</span><span style="color: #00aa00;">)</span> <span style="color: #993333;">no-repeat</span> <span style="color: #cc66cc;">0</span> <span style="color: #cc66cc;">0</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>background的简写也有些默认值：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">background</span><span style="color: #00aa00;">:</span><span style="color: #993333;">transparent</span> <span style="color: #993333;">none</span> <span style="color: #993333;">repeat</span> <span style="color: #993333;">scroll</span> <span style="font-weight: bold;">top</span> <span style="font-weight: bold;">left</span> <span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>background属性的值不会继承，你可以只声明其中的一个，其它的值会被应用默认的。</p>
+<h3 id="font">font</h3>
+<p>font简写也是使用最多的一个，它也是书写高效的CSS的方法之一。</p>
+<p>font包含以下属性：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br>4<br>5<br>6<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">font-style</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">normal</span> || <span style="color: #993333;">italic</span> || <span style="color: #993333;">oblique</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">font-variant</span><span style="color: #00aa00;">:</span><span style="color: #993333;">normal</span> || <span style="color: #993333;">small-caps</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">font-weight</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">normal</span> || <span style="color: #993333;">bold</span> || <span style="color: #993333;">bolder</span> || || <span style="color: #993333;">lighter</span> || <span style="color: #00aa00;">(</span><span style="color: #cc66cc;">100</span>-<span style="color: #cc66cc;">900</span><span style="color: #00aa00;">)</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">font-size</span><span style="color: #00aa00;">:</span> <span style="color: #00aa00;">(</span>number<span style="color: #00aa00;">+</span>unit<span style="color: #00aa00;">)</span> || <span style="color: #00aa00;">(</span><span style="color: #993333;">xx-small</span> - <span style="color: #993333;">xx-large</span><span style="color: #00aa00;">)</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">line-height</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">normal</span> || <span style="color: #00aa00;">(</span>number<span style="color: #00aa00;">+</span>unit<span style="color: #00aa00;">)</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">font-family</span><span style="color: #00aa00;">:</span>name<span style="color: #00aa00;">,</span><span style="color: #ff0000;">“more names”</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>font的各个属性也都有默认值，记住这些默认值相对来说<strong>比较重要</strong>：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br>4<br>5<br>6<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">font-style</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">normal</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">font-variant</span><span style="color: #00aa00;">:</span><span style="color: #993333;">normal</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">font-weight</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">normal</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">font-size</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">inherit</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">line-height</span><span style="color: #00aa00;">:</span> <span style="color: #993333;">normal</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">font-family</span><span style="color: #00aa00;">:</span><span style="color: #993333;">inherit</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>事实上，font的简写是这些简写中最需要小心的一个，稍有疏忽就会造成一些意想不到的后果，所以，<strong>很多人并不赞成使用font缩写</strong>。</p>
+<p>不过这里正好有个小手册，相信会让你更好的理解font的简写：</p>
+<p><a href="http://www.uxy8.com/blog/wp-content/uploads/2014/05/20140509050007308.jpg" target="_blank" rel="external"><img src="http://www.uxy8.com/blog/wp-content/uploads/2014/05/20140509050007308.jpg" alt="css 字体样式简写"></a></p>
+<h3 id="列表样式">列表样式</h3>
+<p>可能大家用的最多的一条关于列表的属性就是：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">list-style</span><span style="color: #00aa00;">:</span><span style="color: #993333;">none</span></pre></td></tr></tbody></table></div>
+
+<p>它会清除所有默认的列表样式，比如数字或者圆点。</p>
+<p>list-style也有三个属性：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">list-style-type</span><span style="color: #00aa00;">:</span><span style="color: #993333;">none</span> || <span style="color: #993333;">disc</span> || <span style="color: #993333;">circle</span> || <span style="color: #993333;">square</span> || <span style="color: #993333;">decimal</span> || <span style="color: #993333;">lower-alpha</span> || <span style="color: #993333;">upper-alpha</span> || <span style="color: #993333;">lower-roman</span> || <span style="color: #993333;">upper-roman</span><br><span style="font-weight: bold;">list-style-position</span><span style="color: #00aa00;">:</span>  <span style="color: #993333;">inside</span> || <span style="color: #993333;">outside</span> || <span style="color: #993333;">inherit</span><br><span style="font-weight: bold;">list-style-image</span><span style="color: #00aa00;">:</span>  <span style="color: #00aa00;">(</span><span style="color: #993333;">url</span><span style="color: #00aa00;">)</span> || <span style="color: #993333;">none</span> || <span style="color: #993333;">inherit</span></pre></td></tr></tbody></table></div>
+
+<p>list-style的默认属性如下：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br></pre></td><td class="code"><pre class="css"><span style="font-weight: bold;">list-style</span><span style="color: #00aa00;">:</span><span style="color: #993333;">disc</span> <span style="color: #993333;">outside</span> <span style="color: #993333;">none</span></pre></td></tr></tbody></table></div>
+
+<p>需要注意的是，如果list-tyle中定义了图片，那么图片的优先级要比list-style-type高，比如：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="code"><pre class="css"><span style="font-weight: bold;">list-style</span><span style="color: #00aa00;">:</span><span style="color: #993333;">circle</span> <span style="color: #993333;">inside</span> <span style="color: #993333;">url</span><span style="color: #00aa00;">(</span><span style="font-style: italic; color: #ff0000;">../img.gif</span><span style="color: #00aa00;">)</span></pre></td></tr></tbody></table></div>
+
+<p>这个例子中，如果img.gif存在，则不会显示前面设置的circle符号。</p>
+<p>PS:其实list-style-type有很多种很有用的样式，感兴趣的同学可以参考一下：<a href="https://developer.mozilla.org/en/CSS/list-style-type" target="_blank" rel="external">https://developer.mozilla.org/en/CSS/list-style-type</a></p>
+<h3 id="border-radius(圆角半径)">border-radius(圆角半径)</h3>
+<p>border-radius是css3中新加入的属性，用来实现圆角边框。这个属性目前不好的一点儿是，各个浏览器对它的支持不同，IE尚不支持，Gecko(firefox)和webkit(safari/chrome)等需分别使用私有前缀-moz-和-webkit-。更让人纠结的是，如果单个角的border-radius属性的写法在这两个浏览器的差异更大，你要书写大量的私有属性：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></pre></td><td class="code"><pre class="css">-moz-border-radius-bottomleft<span style="color: #00aa00;">:</span><span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br>-moz-border-radius-topleft<span style="color: #00aa00;">:</span><span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br>-moz-border-radius-topright<span style="color: #00aa00;">:</span><span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br>-webkit-border-bottom-left-radius<span style="color: #00aa00;">:</span><span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br>-webkit-border-top-left-radius<span style="color: #00aa00;">:</span><span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br>-webkit-border-top-right-radius<span style="color: #00aa00;">:</span><span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-bottom-left-radius</span><span style="color: #00aa00;">:</span><span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-top-left-radius</span><span style="color: #00aa00;">:</span><span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-top-right-radius</span><span style="color: #00aa00;">:</span><span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>呃，是不是你已经看的眼花了？这只是要实现左上角不是圆角，其它三个角都是圆角的情况。所以对于border-radius，神飞强烈建议使用缩写：</p>
+<div class="wp_syntax" style="color: #110000;"><table><tbody><tr><td class="line_numbers" style="color: gray;"><pre>1<br>2<br>3<br></pre></td><td class="code"><pre class="css">-moz-border-radius<span style="color: #00aa00;">:</span><span style="color: #cc66cc;">0</span> <span style="color: #993333;">6px</span> <span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br>-webkit-border-radius<span style="color: #00aa00;">:</span><span style="color: #cc66cc;">0</span> <span style="color: #993333;">6px</span> <span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span><br><span style="font-weight: bold;">border-radius</span><span style="color: #00aa00;">:</span><span style="color: #cc66cc;">0</span> <span style="color: #993333;">6px</span> <span style="color: #993333;">6px</span><span style="color: #00aa00;">;</span></pre></td></tr></tbody></table></div>
+
+<p>这样就简单了很多。PS:不幸的是，最新的Safari(4.0.5)还不支持这种缩写… (thanks @<a href="http://fireyy.com/" target="_blank" rel="external">fireyy</a>)</p>
+<p>就总结这么多，还有其它的可以缩写的属性吗？欢迎大家提出一起讨论。</p>
+<h4 id="_"> </h4>
+<h4 id="参考资源_&nbsp;本文来源自网站">参考资源 &nbsp;本文来源自网站</h4>
+<ul>
+<li><a href="http://www.w3cn.org/article/tips/2005/103.html" target="_blank" rel="external">常用CSS缩写语法总结</a></li>
+<li><a href="http://www.dustindiaz.com/css-shorthand/" title="Read the entire post &quot;CSS Shorthand Guide&quot;" target="_blank" rel="external">CSS Shorthand Guide</a></li>
+<li><a href="http://www.456bereastreet.com/archive/200502/efficient_css_with_shorthand_properties/" target="_blank" rel="external">Efficient CSS with shorthand properties</a></li>
+<li><a href="https://developer.mozilla.org/en/CSS_Reference" target="_blank" rel="external">Mozilla Developer Center:CSS Reference</a></li>
+<li><a href="http://www.impressivewebs.com/css-font-shorthand-property-cheat-sheet/" title="CSS Font Shorthand Property Cheat Sheet" target="_blank" rel="external">CSS Font Shorthand Property Cheat Sheet</a></li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://www.uxy8.com/2014/05/09/3/" data-title="CSS简写方法 提高加载优化你的网站 | 有新意吧" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/05/09/4/" title="23条网页优化规则 让你的网页秒开">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  23条网页优化规则 让你的网页秒开</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/05/04/2/"  title="如何去掉WordPress链接中category">
+ <strong>NEXT:</strong><br/> 
+ <span>如何去掉WordPress链接中category
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#色彩缩写"><span class="toc-number">1.</span> <span class="toc-text">色彩缩写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#盒子大小"><span class="toc-number">2.</span> <span class="toc-text">盒子大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#边框(border)"><span class="toc-number">3.</span> <span class="toc-text">边框(border)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outline"><span class="toc-number">4.</span> <span class="toc-text">outline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#背景(background)"><span class="toc-number">5.</span> <span class="toc-text">背景(background)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font"><span class="toc-number">6.</span> <span class="toc-text">font</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表样式"><span class="toc-number">7.</span> <span class="toc-text">列表样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#border-radius(圆角半径)"><span class="toc-number">8.</span> <span class="toc-text">border-radius(圆角半径)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#_"><span class="toc-number">8.1.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资源_ 本文来源自网站"><span class="toc-number">8.2.</span> <span class="toc-text">参考资源  本文来源自网站</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+	</div>
+</div>
+<aside class="clearfix">
+
+
+  
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">May 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li></ul>
+  </div>
+
+
+  
+
+  <div class="widget tag">
+<h3 class="title">友情链接</h3>
+<ul class="entry">
+<li><a href="http://www.nuobg.com" title="诺伊网-seo" target="_blank">龙岗seo</a></li>
+</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,522 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>定义webkit内核下浏览器滚动条 | 有新意吧</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="iToMY">
+    
+    <meta name="description" content="webkit内核是浏览器滚动条不是用简单的几个CSS属性，而是用到了CSS伪元素：
+::-webkit-scrollbar{/1/} &amp;nbsp; &amp;nbsp;滚动条整体部分
+::-webkit-scrollbar-button{/2/} &amp;nbsp; &amp;nbsp;滚动条两端的按钮
+::-webki">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="有新意吧">有新意吧</a></h1>
+				<h2 class="blog-motto">--静下心来写点文字，分享新意，收获欢乐！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="https://github.com/zhuangxb">GITHUB</a></li>
+					
+					<li>
+					
+					</li>
+					
+									
+				<li> <a title="点击此处，页面元素抖动！" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>HIGH  </a> </li>
+					
+					
+					
+                <li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>
+
+				
+			
+				</ul>
+			</nav>	
+</div>
+
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/05/21/10/" title="定义webkit内核下浏览器滚动条" itemprop="url">定义webkit内核下浏览器滚动条</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://www.uxy8.com" title="iToMY">iToMY</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-05-21T11:52:48.000Z" itemprop="datePublished">5月 21 2014</time>
+    更新日期:<time datetime="2014-08-12T13:36:10.000Z" itemprop="dateModified">8月 12 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
+		<div class="entry"><div id="entry"><div class="ad_r"> <span></span></div>
+
+<p>webkit内核是浏览器滚动条不是用简单的几个CSS属性，而是用到了CSS伪元素：</p>
+<p>::-webkit-scrollbar{/<em>1</em>/} &nbsp; &nbsp;滚动条整体部分</p>
+<p>::-webkit-scrollbar-button{/<em>2</em>/} &nbsp; &nbsp;滚动条两端的按钮</p>
+<p>::-webkit-scrollbar-track{/<em>3</em>/} &nbsp; &nbsp;外层轨道</p>
+<p>::-webkit-scrollbar-track-piece{/<em>4</em>/} &nbsp; &nbsp;内层轨道，滚动条中间部分（除去）</p>
+<p>::-webkit-scrollbar-thumb{/<em>5</em>/} &nbsp; &nbsp;滑块-滚动条里面可以拖动的那个</p>
+<p>::-webkit-scrollbar-corner{/<em>6</em>/} &nbsp; &nbsp;边角</p>
+<p>::-webkit-resizer{/<em>7</em>/} &nbsp; &nbsp;定义右下角拖动块的样式</p>
+<p><a href="http://www.uxy8.com/blog/wp-content/uploads/2014/05/20140521064533242.jpg" target="_blank" rel="external"><img src="http://www.uxy8.com/blog/wp-content/uploads/2014/05/20140521064533242.jpg" alt="自定义webkit内核浏览器滚动条"></a></p>
+<p>通过这些伪元素，可以完全的重写一个网站的滚动条样式。</p>
+<p>当然webkit提供的不止这些，还有很多伪类，可以更丰富滚动条样式：</p>
+<p>:horizontal – horizontal伪类应用于水平方向的滚动条</p>
+<p>:vertical – vertical伪类应用于竖直方向的滚动条</p>
+<p>:decrement – decrement伪类应用于按钮和内层轨道（track piece）。它用来指示按钮或者内层轨道是否会减小视窗的位置（比如，垂直滚动条的上面，水平滚动条的左边。）</p>
+<p>:increment – increment伪类和decrement类似，用来指示按钮或内层轨道是否会增大视窗的位置（比如，垂直滚动条的下面和水平滚动条的右边。）</p>
+<p>:start – start伪类也应用于按钮和滑块。它用来定义对象是否放到滑块的前面。</p>
+<p>:end – 类似于start伪类，标识对象是否放到滑块的后面。</p>
+<p>:double-button – 该伪类以用于按钮和内层轨道。用于判断一个按钮是不是放在滚动条同一端的一对按钮中的一个。对于内层轨道来说，它表示内层轨道是否紧靠一对按钮。</p>
+<p>:single-button – 类似于double-button伪类。对按钮来说，它用于判断一个按钮是否自己独立的在滚动条的一段。对内层轨道来说，它表示内层轨道是否紧靠一个single-button。</p>
+<p>:no-button – 用于内层轨道，表示内层轨道是否要滚动到滚动条的终端，比如，滚动条两端没有按钮的时候。</p>
+<p>:corner-present – 用于所有滚动条轨道，指示滚动条圆角是否显示。</p>
+<p>:window-inactive – 用于所有的滚动条轨道，指示应用滚动条的某个页面容器（元素）是否当前被激活。（在webkit最近的版本中，该伪类也可以用于：：selection伪元素。webkit团队有计划扩展它并推动成为一个标准的伪类）</p>
+<p>另外，:enabled、:disabled、:hover 和 :active 等伪类同样可以用于滚动条中。</p>
+<p>其实，常用到的也就下面这些：</p>
+<div class="dp-highlighter"><div class="bar"></div>
+
+<ol>
+<li>::-webkit-scrollbar{<span class="keyword">width</span>:<span class="string">12px</span>;&nbsp;<span class="keyword">height</span>:<span class="string">12px</span>;}&nbsp;<span class="comment">/<em>滚动条垂直方向的宽度与水平方向的高度</em>/</span></li>
+<li>::-webkit-scrollbar-button{}&nbsp;<span class="comment">/<em>滚动条按钮</em>/</span></li>
+<li>::-webkit-scrollbar-track{}&nbsp;<span class="comment">/<em>滚动条轨道</em>/</span></li>
+<li>::-webkit-scrollbar-track-piece:vertical{}&nbsp;<span class="comment">/<em>滚动条垂直方向轨道件</em>/</span></li>
+<li>::-webkit-scrollbar-track-piece:horizontal{}&nbsp;<span class="comment">/<em>滚动条水平方向轨道件</em>/</span></li>
+<li>::-webkit-scrollbar-thumb{}&nbsp;<span class="comment">/<em>滚动条轨道上的按钮</em>/</span></li>
+<li>::-webkit-scrollbar-corner{}&nbsp;<span class="comment">/<em>滚动条轨道上的滚动角</em>/</span></li></ol></div>
+
+<p>看到这里，你可能纳闷怎么是两个冒号后面还有一个冒号的，请查看<a href="http://www.uxy8.com/design-ue/div-css/143.html" title="CSS一个冒号跟两个冒号的区别-伪类与伪元素是什么" target="_blank" rel="external">css伪类跟伪元素的区别</a>。值得一提的是，webkit的这个伪类和伪元素的实现很强大，虽然类目有些多，但是我们可以把滚动条当成一个页面元素来定义，也差不多可以用上一些高级的CSS3属性，比如渐变、圆角、RGBa等等，当然有些地方也可以用图片，然后图片也可以转换成Base64，总之，可以尽情发挥了。</p>
+<div>最后，贴上本站的浏览器滚动条样式代码：（只有webkit内核的浏览器才能看到）</div><div></div><div class="dp-highlighter"><div class="bar"></div>
+
+<ol>
+<li>::selection{<span class="keyword">background</span>:<span class="colors">#02acdf</span>;<span class="keyword">color</span>:<span class="colors">#fff</span>;}</li>
+<li>::-moz-selection{<span class="keyword">background</span>:<span class="colors">#02acdf</span>;<span class="keyword">color</span>:<span class="colors">#fff</span>;}</li>
+<li>::-webkit-selection{<span class="keyword">background</span>:<span class="colors">#02acdf</span>;<span class="keyword">color</span>:<span class="colors">#fff</span>;}</li>
+<li><span class="comment">/<em>以上为选取文字蓝底白字</em>/</span></li>
+<li><span class="comment">/<em>以下定义webkit内核下浏览器的滚动条</em>/</span></li>
+<li>::-webkit-scrollbar{<span class="keyword">width</span>:<span class="string">12px</span>;&nbsp;<span class="keyword">height</span>:<span class="string">12px</span>;}</li>
+<li>::-webkit-scrollbar-button{<span class="keyword">display</span>:<span class="string">none</span>;}</li>
+<li>::-webkit-scrollbar-track&nbsp;{-webkit-box-shadow:&nbsp;<span class="string">inset</span>&nbsp;0&nbsp;0&nbsp;<span class="string">6px</span>&nbsp;rgba(0,0,0,0.3);}</li>
+<li>::-webkit-scrollbar-thumb&nbsp;{<span class="keyword">background</span>:<span class="colors">#02acdf</span>;&nbsp;-webkit-box-shadow:&nbsp;<span class="string">inset</span>&nbsp;0&nbsp;0&nbsp;<span class="string">6px</span>&nbsp;rgba(0,0,0,0.3);}</li>
+<li>::-webkit-scrollbar-thumb:active{<span class="keyword">background</span>:<span class="colors">#7ac8df</span>;}</li></ol></div></div></div>
+
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://www.uxy8.com/2014/05/21/10/" data-title="定义webkit内核下浏览器滚动条 | 有新意吧" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/05/21/9/" title="CSS一个冒号跟两个冒号的区别-伪类与伪元素是什么">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  CSS一个冒号跟两个冒号的区别-伪类与伪元素是什么</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/05/12/6/"  title="就业压力大 如何应对面试 面试回答技巧该如何从容应对">
+ <strong>NEXT:</strong><br/> 
+ <span>就业压力大 如何应对面试 面试回答技巧该如何从容应对
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
+<div id="asidepart">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+	</div>
+</div>
+<aside class="clearfix">
+
+
+  
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">May 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li></ul>
+  </div>
+
+
+  
+
+  <div class="widget tag">
+<h3 class="title">友情链接</h3>
+<ul class="entry">
+<li><a href="http://www.nuobg.com" title="诺伊网-seo" target="_blank">龙岗seo</a></li>
+</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>

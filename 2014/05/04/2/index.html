@@ -1,0 +1,489 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>如何去掉WordPress链接中category | 有新意吧</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="iToMY">
+    
+    <meta name="description" content="为了SEO我们常常需要对wordpress做一定优化，今天先给大家分享一个，去掉category的方法，降低目录的深度。WordPress去掉固定链接里的“category”的办法很多，这里介绍三个简单易用的，起个抛砖引玉的作用。一是在Wordpress后台固定链接里设置；二是通过修改Wordpre">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="有新意吧">有新意吧</a></h1>
+				<h2 class="blog-motto">--静下心来写点文字，分享新意，收获欢乐！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="https://github.com/zhuangxb">GITHUB</a></li>
+					
+					<li>
+					
+					</li>
+					
+									
+				<li> <a title="点击此处，页面元素抖动！" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>HIGH  </a> </li>
+					
+					
+					
+                <li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>
+
+				
+			
+				</ul>
+			</nav>	
+</div>
+
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/05/04/2/" title="如何去掉WordPress链接中category" itemprop="url">如何去掉WordPress链接中category</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://www.uxy8.com" title="iToMY">iToMY</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-05-04T11:52:48.000Z" itemprop="datePublished">5月 4 2014</time>
+    更新日期:<time datetime="2014-08-12T12:15:16.000Z" itemprop="dateModified">8月 12 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
+		<p><a href="http://www.uxy8.com/blog/wp-content/uploads/2014/05/2014050905264893.jpg" target="_blank" rel="external"><img src="http://www.uxy8.com/blog/wp-content/uploads/2014/05/2014050905264893.jpg" alt="QQ截图20140509132617"></a></p>
+<p>为了SEO我们常常需要对wordpress做一定优化，今天先给大家分享一个，去掉category的方法，降低目录的深度。WordPress去掉固定链接里的“category”的办法很多，这里介绍三个简单易用的，起个抛砖引玉的作用。一是在Wordpress后台固定链接里设置；二是通过修改Wordpress核心函数实现；三是通过酷文博Wordpress插件实现。</p>
+<p><strong>修改固定链接设置，去掉分类链接前缀category</strong><br> 登录你的Wordpress后台，打开固定链接/永久链接设置项。在“可选设置”里的“分类地址前缀”里输入半角字符： “.”；保存即可去掉分类前缀category。<br> 优点：设置简单，老少皆宜。适用于初建成的博客，或刚打算使用固定链接 /永久链接的博客。用不着修改代码，升级之时没有顾虑；用不着插件，不会增加运行负担。<br> 缺点：原链接无法打开，出现404错误。被搜索引擎收录良好，或分类链接有较多外链链入的博客，可要万分小心了。不要因为操作简单、省时省力而损失了大量外链及权重。<br> 开启重写后，这样设置会导致分类和标签下找不到对应文章，所以最好还是只将其缩短。</p>
+<p><strong>借助Wordpress插件，去掉分类前缀category</strong><br> 1、WP No Category Base：作者iDope，是为去除固定链接中分类链接里的category而开发出来的一款wordpress插件，被下载近5万次。安装启用此插件后，对原来的分类地址做了301跳转，对SEO优化有好处，把降权风险降到最低。<br> 下载地址：WordPress官方下载；作者iDope博客下载<br> <del>2、No category parents：作者milardovich，上面插件的升级版，不仅能去掉分类链接的前缀category，还能去掉父分类 parent-category。例如能把“/category/parent-category/my-category/”换成“/my-category/”形式。</del><br> <del> 下载地址：WordPress官方下载；作者milardovich博客下载</del><span style="color: #ff0000;">3.9版本使用不生效</span><br> 优点：安装简单，老少皆宜。无论是初建成的博客，还是正打算使用固定链接 /永久链接的博客，还是被搜索引擎收录良好的博客。用不着修改代码，升级之时没有顾虑。使用 301跳转，把原链接进行跳转。最大程度防止搜索引擎降权，防止原链接打不开。<br> 不足：插件或许会造成空间负担。这里不说是缺点，就是因为，造成的“空间负担”微乎其微，不应该是缺点。比较在意的就不用，无所谓推荐使用。</p>
+<p>&nbsp;</p>
+<p><strong>修改Wordpress函数，去掉分类前缀category</strong><br> 1、找到你Wordpress博客wp-includes文件夹下的category-template.php。<br> 2、打开此文件，搜索（get_category_link()函数里）的以下代码：</p>
+<p>wordpress3.2之前版本</p>
+<p>$catlink = $wp_rewrite-&gt;get_category_permastruct(); 在其后，另起一行加入：</p>
+<div class="dp-highlighter"><div class="bar"></div>
+
+<ol>
+<li><span class="vars">$catlink</span>&nbsp;=&nbsp;<span class="func">str_replace</span>(‘/category’&nbsp;,&nbsp;”&nbsp;,&nbsp;<span class="vars">$catlink</span>);</li></ol></div>
+
+<p>wordpress3.2版本</p>
+<p>function get_category_link( $category )<br> 在最后的return $category;之前加入</p>
+<div class="dp-highlighter"><div class="bar"></div>
+
+<ol>
+<li><span class="vars">$category</span>&nbsp;=&nbsp;<span class="func">str_replace</span>(‘/category’, ”,&nbsp;<span class="vars">$category</span>);</li></ol></div>
+
+<p>代码作用是，使用字符串替换函数，把获取分类链接函数的分类链接里的/category替换掉。达到去掉分类链接前缀/category的目的。</p>
+<p>3、保存上传到服务器即可。<br> 优点：仅加入一段代码，性能影响忽略不计。适用于对代码稍熟悉的博客。<br> 缺点：修改代码，博客升级还要修改。且原地址仍可以访问。或会造成谷歌网站管理员工具里提到的，重复的标题。所以不推荐使用，版本更新还需要再次修改，比较麻烦。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://www.uxy8.com/2014/05/04/2/" data-title="如何去掉WordPress链接中category | 有新意吧" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/05/09/3/" title="CSS简写方法 提高加载优化你的网站">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  CSS简写方法 提高加载优化你的网站</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/04/24/1/"  title="舌尖上的中国第二季，阐述了家的味道！">
+ <strong>NEXT:</strong><br/> 
+ <span>舌尖上的中国第二季，阐述了家的味道！
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
+<div id="asidepart">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+	</div>
+</div>
+<aside class="clearfix">
+
+
+  
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">May 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li></ul>
+  </div>
+
+
+  
+
+  <div class="widget tag">
+<h3 class="title">友情链接</h3>
+<ul class="entry">
+<li><a href="http://www.nuobg.com" title="诺伊网-seo" target="_blank">龙岗seo</a></li>
+</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
